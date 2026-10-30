@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="uk">
+<html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -619,7 +619,7 @@
       };
       document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
       const guessLanguage = () => { try { const nav = (navigator.language || '').toLowerCase(); const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; if (nav.startsWith('uk')) return 'uk'; if (nav.startsWith('ru')) return 'ru'; if (/Kiev|Kyiv|Simferopol|Zaporozhye|Uzhgorod/.test(tz)) return 'uk'; return 'en'; } catch (_) { return 'uk'; } };
-      let savedLanguage = null; try { savedLanguage = localStorage.getItem('baronvideo-language'); } catch (_) {} setLanguage(savedLanguage || guessLanguage());
+      setLanguage('ru');
       document.querySelectorAll('[data-doc]').forEach(link => link.addEventListener('click', event => {
         event.preventDefault(); document.getElementById(link.dataset.doc)?.showModal();
       }));
